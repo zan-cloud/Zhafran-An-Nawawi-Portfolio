@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Zhafran An-Nawawi | Portfolio</title>
+
+    <!-- Link CSS Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Script JS Bootstrap 5 (untuk komponen interaktif seperti dropdown) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- LINK FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICON -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="icon/ZAN.png" type="image/x-icon" />
+
+    <!-- Sweeralert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --primary-color: white;
+        --second-color: #f9fafc;
+        --third-color: #2a4b32;
+        --btn-color: #ffc130;
+        --btn_hover-color: #e8ad2f;
+        --text-color: black;
+        --description-color: #656464;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: 0;
+        border: none;
+        text-decoration: none;
+      }
+      body {
+        background-color: var(--primary-color);
+        font-family: Poppins, sans-serif;
+      }
+      .subject {
+        color: var(--text-color);
+        padding: 20px;
+        font: 150px;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--third-color);
+        height: 70px;
+        width: 90%;
+        padding: 0 20px;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+        z-index: 9999;
+        margin: 10px auto;
+        border-radius: 15px;
+      }
+      .navbar h1 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        padding-right: 50px;
+      }
+      .navbar ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+        align-items: center;
+      }
+      .navbar li a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar li a:focus,
+      .navbar li a:hover {
+        color: var(--btn-color);
+        background-color: var(--hover-color);
+        transform: translateY(-2px);
+      }
+      .navbar li a.active {
+        color: var(--btn-color);
+      }
+      .navbar .btn-contact {
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        transition: all 0.3s ease-in-out;
+      }
+      .navbar .btn-contact a {
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .navbar .btn-contact:hover {
+        background-color: var(--btn-color);
+        transform: translateY(-2px);
+      }
+      @media (max-width: 768px) {
+        .navbar ul {
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 15px;
+        }
+        .navbar li a {
+          font-size: 0.9rem;
+        }
+        .navbar .btn-contact {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+      }
+      .navbar a.logo {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 2em;
+        color: #fff;
+      }
+      .about {
+        display: flex;
+        justify-content: center;
+        margin: 40px 30px;
+        gap: 30px;
+      }
+      .name {
+        color: #000;
+        margin-bottom: 30px;
+      }
+      .name h1 {
+        font-size: 4rem;
+      }
+
+      .firstname {
+        display: block;
+        color: var(--btn-color);
+        font-weight: 400;
+        margin-bottom: -15px;
+      }
+      .lastname {
+        color: var(--btn-color);
+        font-weight: 400;
+      }
+
+      .description {
+        max-width: 500px;
+        text-align: justify;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+      .name p {
+        letter-spacing: 5px;
+        font-size: 1.3rem;
+        font-weight: 100;
+        color: var(--description-color);
+      }
+      
+      .about {
+        margin-top: 80px;
+      }
+      
+      .image img {
+        max-width: 600px;
+        background-color: var(--btn-color);
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      }
+      @media (max-width: 768px) {
+        .about {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      .btn-portfolio {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 15px;
+        background-color: var(--btn-color);
+        margin-top: 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        cursor: pointer;
+      }
+      .btn-portfolio a {
+        color: #000;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .btn-portfolio:hover {
+        background-color: var(--btn_hover-color);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgb(0 0 0 / 0.15);
+      }
+      .services {
+        text-align: center;
+        padding: 60px 20px;
+        background: var(--second-color);
+      }
+      .services-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .highlight {
+        color: var(--btn-color);
+      }
+      .services-description {
+        font-size: 1rem;
+        color: var(--description-color);
+        margin-bottom: 40px;
+      }
+
+      .service-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        transition: transform 0.3s ease;
+        cursor: default;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgb(0 0 0 / 0.2);
+      }
+      .service-icon {
+        font-size: 2.5rem;
+        color: var(--btn-color);
+        margin-bottom: 15px;
+      }
+      .service-title {
+        color: var(--third-color);
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .service-description {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .projects {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: var(--primary-color);
+      }
+      .projects-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .project-card {
+        padding: 20px;
+        background-color: var(--second-color);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgb(0 0 0 / 0.2);
+      }
+      .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .service-btn {
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .service-btn a {
+        display: inline-block;
+        color: #000;
+        background-color: var(--btn-color);
+        border: 1px solid var(--btn-color);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .service-btn a:hover {
+        background-color: var(--btn_hover-color);
+        color: #000;
+        transform: translateY(-3px);
+      }
+      .project-details {
+        padding: 20px;
+      }
+      .project-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--third-color);
+      }
+      .project-details p {
+        font-size: 0.9rem;
+        color: var(--description-color);
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+      .project-link {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--primary-color);
+        background-color: var(--btn-color);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .project-link:hover {
+        background-color: var(--btn_hover-color);
+        transform: scale(1.05);
+      }
+
+      .projects-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        margin: 30px auto;
+        padding: 20px 30px;
+        background-color: var(--btn-color);
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        color: var(--third-color);
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .projects-btn i {
+        margin-left: 10px;
+        color: var(--third-color);
+      }
+      .projects-btn:hover {
+        background-color: var(--btn_hover-color);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgb(0 0 0 / 0.2);
+      }
+      .awards {
+        text-align: center;
+        padding: 60px 20px;
+        background: #2a4b32;
+      }
+      .awards-title {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        font-weight: bold;
+        
+      }
+      .award-card {
+        background: var(--second-color);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+      }
+      .award-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+      }
+      .award-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .award-details {
+        padding: 20px;
+      }
+      .award-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #193701;
+      }
+      .award-details p {
+        font-size: 0.9rem;
+        color: var(--description-color);
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      .awards-description {
+        font-size: 1rem;
+        color: white;
+        margin-bottom: 40px;
+      }
+      #contact {
+        background-color: var(--primary-color);
+        width: 100%;
+        padding: 50px 20px;
+        box-sizing: border-box;
+      }
+      #contact .subject {
+        color: var(--text-color);
+        margin-left: 190px;
+        font: 150px;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+      }
+      .description-contact {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 40px;
+      }
+      .form-horizontal {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+      }
+      .form-control,
+      textarea {
+        width: 100%;
+        background-color: #ececec;
+        color: var(--text-color);
+        padding: 10px 15px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea {
+        resize: none;
+      }
+      .form-control:focus,
+      textarea:focus {
+        outline: 0;
+        border-color: #000;
+      }
+      .form-control::placeholder,
+      textarea::placeholder {
+        color: #000;
+      }
+      .send-button {
+        width: 100%;
+        background-color: var(--btn-color);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .send-button:hover {
+        background-color: var(--btn_hover-color);
+      }
+      .direct-contact-container {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+      }
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+      }
+      .list-item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #bbb;
+      }
+      .list-item i {
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin-right: 10px;
+        background-color: var(--btn-color);
+        color: var(--third-color);
+        border-radius: 50%;
+        font-size: 1rem;
+      }
+      .contact-text {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+      }
+      .contact-text a {
+        color: var(--text-color);
+        font-size: 1rem;
+      }
+      .social-media-list {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+        margin: 20px 0;
+        list-style: none;
+      }
+    
+      .social-media-list li {
+        position: relative;
+      }
+      .social-media-list li a {
+        display: flex;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+        color: var(--third-color);
+        background-color: var(--btn-color);
+        border-radius: 50%;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        text-decoration: none;
+      }
+      .social-media-list li a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgb(0 0 0 / 0.3);
+      }
+      .social-media-list li a::before {
+        content: attr(id);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: var(--btn-color);
+        color: var(--third-color);
+        padding: 10px 15px;
+        font-size: 0.7rem;
+        border-radius: 5px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        white-space: nowrap;
+      }
+      .social-media-list li a:hover::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(50%);
+      }
+      hr {
+        border: none;
+        height: 1px;
+        background: rgb(255 255 255 / 0.1);
+        margin: 20px 0;
+      }
+      /* Tambahkan background kuning ketika navbar di-expand */
+    .navbar .collapse.show {
+      background-color: var(--btn-color); /* Warna latar belakang */
+      padding: 10px; /* Tambahkan padding agar terlihat lebih rapi */
+      border-radius: 8px; /* Opsional: Tambahkan efek membulat */
+      transition: background-color 0.3s ease; /* Animasi transisi */
+    }
+    /* Ubah warna tombol toggle saat ditekan */
+.navbar-toggler:focus, 
+.navbar-toggler:active {
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animasi transisi */
+}
+
+/* Ubah warna ikon saat tombol ditekan */
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:active .navbar-toggler-icon {
+  filter: brightness(0.5); /* Opsional: Ubah kecerahan ikon */
+}
+
+.toggler-navbar{
+  border-radius: 5px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  background-color: white;
+
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand logo" href="#home">ZAN</a>
+    
+        <!-- Tombol Toggle -->
+        <button
+          class="toggler-navbar"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#awards">Awards</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Tombol Contact Me -->
+        <div class="btn-contact d-lg-block d-none">
+          <a href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </nav>
+    
+
+    <section id="home" class="py-5">
+      <div class="container">
+        
+        <div class="row align-items-center">
+          <!-- Text Section -->
+          <div class="col-12 col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+            <p class="mb-2 fw-bold fs-5">Hello There!</p>
+            <div class="name">
+              <h1 class="mb-3 ">
+                <span class="firstname">
+                  <span class="name">I'm </span>Zhafran
+                </span>
+                <span class="lastname">An-Nawawi</span>
+              </h1>
+              <p class=" mb-4 fs-6">Web & Game Development</p>
+            </div>
+          </div>
+    
+          <!-- Image Section -->
+          <div class="image col-12 col-lg-6 order-1 order-lg-4 text-center mb-4 mb-lg-0">
+            <!-- <img 
+              src="myphoto/zh.png" 
+              alt="Profile Image" 
+              class="img-fluid rounded" 
+              style="max-width: 350px" 
+              /> -->
+          </div>
+        </div>
+        <!-- Description Section -->
+        <div class="row">
+          <div class=" description col-12">
+            <p class="mb-4">
+              I am a vocational high school student majoring in Software
+              Engineering with expertise in website and game development,
+              experienced in creating responsive websites and interactive games,
+              known for being dedicated, detail-oriented, and enthusiastic about
+              learning new technologies to contribute positively through
+              internships or work.
+            </p>
+          </div>
+        </div>
+        <div class="btn-about">
+          <div class="btn-portfolio">
+            <a href="/myportfolio/Portfolio ZH.pdf " target="_blank">See my portfolio</a>
+          </div>
+        </div>
+
+      </div>
+    </section>    
+    
+    <section id="services">
+      <div class="services">
+        <div class="py-3 text-center mb-4">
+          <h2 class="services-title">
+            My<span class="highlight"> Services</span>
+          </h2>
+          <p class="services-description">
+            I offer a variety of services to help you achieve your digital
+            goals.
+          </p>
+        </div>
+
+        <div class="row services-grid">
+          <!-- Kartu Layanan 1 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card text-center h-100">
+              <div class="service-icon mb-3">
+                <i class="fa-solid fa-mobile"></i>
+              </div>
+              <h3 class="service-title">Mobile App Development</h3>
+              <p class="service-description">
+                Creating intuitive mobile apps optimized for smooth performance
+                on all platforms.
+              </p>
+            </div>
+          </div>
+          <!-- Kartu Layanan 2 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card text-center h-100">
+              <div class="service-icon mb-3">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3 class="service-title">Web Development</h3>
+              <p class="service-description">
+                Building responsive and dynamic websites tailored to your needs.
+              </p>
+            </div>
+          </div>
+          <!-- Kartu Layanan 3 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card text-center h-100">
+              <div class="service-icon mb-3">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <h3 class="service-title">Game Development</h3>
+              <p class="service-description">
+                Creating interactive and engaging gaming experiences.
+              </p>
+            </div>
+          </div>
+          <!-- Kartu Layanan 4 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card text-center h-100">
+              <div class="service-icon mb-3">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <h3 class="service-title">IOT Engineer</h3>
+              <p class="service-description">
+                Designing and implementing smart IoT solutions to seamlessly connect devices and optimize data-driven performance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collapsed Section: Card tambahan -->
+        <!-- <div class="collapse" id="moreProjects">
+          <div class="row projects-grid">
+            <!-- Service 5 -->
+            <!-- <div class="col-lg-3 col-md-6 mb-4">
+              <div class="service-card text-center h-100">
+                <div class="service-icon mb-3">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Data Analyst</h3>
+                <p class="service-description">
+                  Transforming complex data into actionable insights to drive
+                  business growth and efficiency.
+                </p>
+              </div>
+            </div> -->
+
+            <!-- Service 6 -->
+            <!-- <div class="col-lg-3 col-md-6 mb-4">
+              <div class="service-card text-center h-100">
+                <div class="service-icon mb-3">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Data Analyst</h3>
+                <p class="service-description">
+                  Transforming complex data into actionable insights to drive
+                  business growth and efficiency.
+                </p>
+              </div>
+            </div> -->
+
+            <!-- Service 7 -->
+            <!-- <div class="col-lg-3 col-md-6 mb-4">
+              <div class="service-card text-center h-100">
+                <div class="service-icon mb-3">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Data Analyst</h3>
+                <p class="service-description">
+                  Transforming complex data into actionable insights to drive
+                  business growth and efficiency.
+                </p>
+              </div>
+            </div> -->
+
+            <!-- Service 8 -->
+            <!-- <div class="col-lg-3 col-md-6 mb-4">
+              <div class="service-card text-center h-100">
+                <div class="service-icon mb-3">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Data Analyst</h3>
+                <p class="service-description">
+                  Transforming complex data into actionable insights to drive
+                  business growth and efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="text-center mt-4">
+          <a
+            class="projects-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#moreProjects"
+            aria-expanded="false"
+            aria-controls="moreProjects"
+          >
+            View More Projects
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="projects">
+      <div class="projects">
+        <div class="py-3 text-center mb-4">
+          <h2 class="projects-title">
+            My Latest <span class="highlight">Projects</span>
+          </h2>
+          <p class="services-description">
+            A glimpse into my latest projects, where I blend design and
+            functionality to create impactful digital solutions.
+          </p>
+        </div>
+
+        <!-- Row 1: Card yang selalu terlihat -->
+        <div class="row projects-grid">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card p-3 h-100">
+              <img
+                src="Projects/Khazanah.png"
+                alt="Khazanah - Website Ecommerce"
+                class="project-image img-fluid"
+              />
+              <div class="service-btn d-flex justify-content-center gap-2">
+                <a href="#" class="btn btn-sm">UI/UX Design</a>
+                <a href="#" class="btn btn-sm">Web Development</a>
+              </div>
+              <div class="project-details text-center mt-2">
+                <h3>Khazanah - <b>Website Ecommerce</b></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card p-3 h-100">
+              <img
+                src="Projects/Game.png"
+                alt="Mystery Of Saphiria - Mobile Game App"
+                class="project-image img-fluid"
+              />
+              <div class="service-btn d-flex justify-content-center gap-2">
+                <a href="#" class="btn btn-sm">UI/UX Design</a>
+                <a href="#" class="btn btn-sm">Game Development</a>
+              </div>
+              <div class="project-details text-center mt-2">
+                <h3>Mystery Of Saphiria - <b>Mobile Game App</b></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card p-3 h-100">
+              <img
+                src="Projects/Smart Ac.jpg"
+                alt="Smart Ac - Website App"
+                class="project-image img-fluid"
+              />
+              <div class="service-btn d-flex justify-content-center gap-2">
+                <a href="#" class="btn btn-sm">IOT Engineer</a>
+                <a href="#" class="btn btn-sm">Website App Development</a>
+              </div>
+              <div class="project-details text-center mt-2">
+                <h3>Smart AC - <b>Website App</b></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collapsed Section: Card tambahan -->
+        <!-- <div class="collapse" id="moreProjects">
+          <div class="row projects-grid">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra1.jpg"
+                  alt="Extra Project 1"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 1</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra2.jpg"
+                  alt="Extra Project 2"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 2</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra3.jpg"
+                  alt="Extra Project 3"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 3</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Button untuk melihat lebih banyak -->
+        <!-- <div class="text-center mt-4">
+          <a
+            class="projects-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#moreProjects"
+            aria-expanded="false"
+            aria-controls="moreProjects"
+          >
+            View More Projects
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="awards">
+      <div class="awards">
+        <div class="py-3 text-center mb-4">
+          <h2 class="awards-title">My <span class="highlight">Awards</span></h2>
+          <p class="awards-description">
+            Recognizing the awards that acknowledge my efforts and skills across
+            various tech fields, from game development to data analysis.
+          </p>
+        </div>
+        <div class="row awards-grid">
+          <!-- Kartu Award 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="award-card text-center p-3 h-100">
+              <img
+                src="Awards/Construct.png"
+                alt="Award 1 Image"
+                class="award-image img-fluid mb-3"
+              />
+              <div class="award-details">
+                <h3>Game Fundamental Construct - GameLab</h3>
+                <p>
+                  Awarded for successfully completing the competency enhancement
+                  program.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Award 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="award-card text-center p-3 h-100">
+              <img
+                src="Awards/Phaser.png"
+                alt="Award 2 Image"
+                class="award-image img-fluid mb-3"
+              />
+              <div class="award-details">
+                <h3>Game 2D Phaser Game Framework - GameLab</h3>
+                <p>
+                  Awarded for successfully completing the competency enhancement
+                  program.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Award 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="award-card text-center p-3 h-100">
+              <img
+                src="Awards/Goggle.png"
+                alt="Award 3 Image"
+                class="award-image img-fluid mb-3"
+              />
+              <div class="award-details">
+                <h3>Google Play Store Listing - Google Play Academy</h3>
+                <p>
+                  Awarded for successfully fulfilling the requirements for
+                  Google Play Store listing certification.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collapsed Section: Card tambahan -->
+        <!-- <div class="collapse" id="moreAwards">
+          <div class="row projects-grid">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra1.jpg"
+                  alt="Extra Project 1"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 1</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra2.jpg"
+                  alt="Extra Project 2"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 2</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="project-card p-3 h-100">
+                <img
+                  src="Projects/Extra3.jpg"
+                  alt="Extra Project 3"
+                  class="project-image img-fluid"
+                />
+                <div class="service-btn d-flex justify-content-center gap-2">
+                  <a href="#" class="btn btn-sm">UI/UX Design</a>
+                  <a href="#" class="btn btn-sm">Web Development</a>
+                </div>
+                <div class="project-details text-center mt-2">
+                  <h3>Extra Project 3</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Button untuk melihat lebih banyak -->
+        <!-- <div class="text-center mt-4">
+          <a
+            class="projects-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#moreAwards"
+            aria-expanded="false"
+            aria-controls="moreProjects"
+          >
+            View More Awards
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="contact">
+      <div class="subject">
+        <h3><span class="highlight">-</span>Contact Me</h3>
+      </div>
+      <div class="contact-wrapper">
+        <div class="direct-contact-container">
+          <h2 class="description-contact">
+            Let's Talk for <span class="highlight">Your Next Projects</span>
+          </h2>
+
+          <!-- Contact Lisr -->
+          <ul class="contact-list">
+            <li class="list-item">
+              <i class="fa fa-map-marker fa-2x"></i
+              ><span class="contact-text"
+                >Batam, Kepulauan Riau, Indonesia</span
+              >
+            </li>
+            <li class="list-item">
+              <i class="fa fa-phone fa-2x"></i
+              ><span class="contact-text">+62 895 3852 94538</span>
+            </li>
+            <li class="list-item">
+              <i class="fa fa-envelope fa-2x"></i
+              ><span class="contact-text">zhafran.annawawi@gmail.com</span>
+            </li>
+          </ul>
+          <hr />
+
+          <!-- Social Media List -->
+          <ul class="social-media-list">
+            <li>
+              <a
+                id="Instagram"
+                href="https://www.instagram.com/zhafrannawawi/"
+                target="_blank"
+                class="instagram-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                id="Linkedin"
+                href="https://www.linkedin.com/in/zhafran-an-nawawi-3ba246327/"
+                target="_blank"
+                class="linkedin-icon"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                id="Github"
+                href="https://github.com/zan-cloud?tab=repositories"
+                target="_blank"
+                class="github-icon"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </li>
+          </ul>
+          <hr />
+        </div>
+        <form id="contact-form" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="name" class="sr-only" style="font-family: Poppins"
+              >Your name</label
+            >
+            <div class="col-sm-12">
+              <input
+                style="font-family: Poppins"
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Your Name"
+                name="name"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <div class="col-sm-12">
+              <input
+                style="font-family: Poppins"
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder=" Your Email"
+                name="email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="sr-only">Message</label
+            ><textarea
+              style="font-family: Poppins"
+              class="form-control"
+              rows="10"
+              id="message"
+              placeholder="Message"
+              name="message"
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn-primary send-button" id="submit" type="submit">
+            <div class="alt-send-button">
+              <span class="send-text">SEND</span>
+            </div>
+          </button>
+        </form>
+      </div>
+    </section>
+    
+  </body>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Inisialisasi EmailJS
+    (function () {
+      emailjs.init("1zhCsxpzk04cnXgGD"); // Ganti dengan Public Key Anda
+    })();
+
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah form reload
+
+        // Kirim data ke EmailJS
+        emailjs.sendForm("service_5x3lw04", "template_6i5vmyd", this).then(
+          function () {
+            Swal.fire({
+              icon: "success",
+              title: "Thank You!",
+              text: "Your message has been sent successfully. We'll get back to you soon!",
+              confirmButtonText: "Great!",
+              confirmButtonColor: "#ffc130",
+              color: "#333",
+            }).then(() => {
+              // Bersihkan teks di form
+              document.getElementById("contact-form").reset();
+            });
+          },
+          function (error) {
+            Swal.fire({
+              icon: "error",
+              title: "Oh no!",
+              text: "We couldn’t send your message. Please try again or check your connection.",
+              confirmButtonText: "Got it",
+            });
+          }
+        );
+      });
+  </script>
+</html>
